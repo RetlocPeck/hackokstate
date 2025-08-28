@@ -17,8 +17,24 @@ export const metadata: Metadata = {
   authors: [{ name: "Hack OKState Team" }],
   openGraph: {
     title: "Hack OKState '25",
-    description: "Oklahoma State University's premier hackathon",
+    description: "Oklahoma State University&apos;s premier hackathon",
     type: "website",
+    siteName: "Hack OKState",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Hack OKState '25 - Oklahoma State University Hackathon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hack OKState &apos;25",
+    description: "Oklahoma State University&apos;s premier hackathon",
+    images: ["/og-image.png"],
   },
 };
 
