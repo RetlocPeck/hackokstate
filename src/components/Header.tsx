@@ -26,7 +26,7 @@ export default function Header() {
               <Code className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-xl text-osu-black">
-              Hack OKState <span className="text-osu-orange">&rsquo;25</span>
+              Hack OKState <span className="text-osu-orange">'25</span>
             </span>
           </Link>
 

@@ -28,8 +28,6 @@ export default function Home() {
     }
   ];
 
-
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -54,7 +52,7 @@ export default function Home() {
               >
                 <span className="text-osu-black">Hack</span>{' '}
                 <span className="text-osu-orange">OKState</span>{' '}
-                <span className="text-osu-black">&rsquo;25</span>
+                <span className="text-osu-black">'25</span>
               </motion.h1>
               
               <motion.p 
@@ -63,7 +61,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Oklahoma State University&rsquo;s premier hackathon. 24 hours of innovation, 
+                Oklahoma State University's premier hackathon. 24 hours of innovation, 
                 collaboration, and building the future.
               </motion.p>
             </div>
@@ -105,7 +103,7 @@ export default function Home() {
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-5 h-5 text-osu-orange" />
-                <span className="font-medium">CEAT  Endeavor, OSU</span>
+                <span className="font-medium">CEAT Endeavor, OSU</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="w-5 h-5 text-osu-orange" />
@@ -156,8 +154,6 @@ export default function Home() {
         </div>
       </section>
 
-
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-osu-orange to-osu-orange-dark text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
@@ -187,7 +183,7 @@ export default function Home() {
               className="inline-flex items-center space-x-3 bg-white text-osu-orange px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Users className="w-5 h-5" />
-              <span>Register for Hack OKState &rsquo;25</span>
+              <span>Register for Hack OKState '25</span>
             </a>
           </motion.div>
         </div>

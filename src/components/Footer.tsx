@@ -16,10 +16,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold">
-              Hack OKState <span className="text-osu-orange">&rsquo;25</span>
+              Hack OKState <span className="text-osu-orange">'25</span>
             </h3>
             <p className="text-gray-400 leading-relaxed">
-              Oklahoma State University&rsquo;s premier hackathon bringing together innovators, 
+              Oklahoma State University's premier hackathon bringing together innovators, 
               creators, and problem solvers for an unforgettable weekend of coding.
             </p>
             <div className="flex items-center space-x-2 text-gray-400">

@@ -5,52 +5,50 @@ import { Calendar, Clock, MapPin, Users, Trophy, Code, Coffee, Wifi, Utensils, H
 
 export default function InfoPage() {
   const schedule = [
-    { time: 'Friday 6:00 PM', event: 'Registration & Check-in', description: 'Get your badge and swag!' },
-    { time: 'Friday 7:00 PM', event: 'Opening Ceremony', description: 'Welcome & rules overview' },
-    { time: 'Friday 8:00 PM', event: 'Team Formation', description: 'Find your perfect team' },
-    { time: 'Friday 9:00 PM', event: 'Hacking Begins!', description: 'Let the coding commence' },
-    { time: 'Saturday 8:00 AM', event: 'Breakfast', description: 'Fuel up for the day' },
-    { time: 'Saturday 12:00 PM', event: 'Lunch', description: 'Midday refuel' },
-    { time: 'Saturday 2:00 PM', event: 'Tech Talks', description: 'Industry experts share insights' },
+    { time: 'Saturday 12:00 PM', event: 'Registration & Check-in', description: 'Get your badge and swag!' },
+    { time: 'Saturday 12:30 PM', event: 'Opening Ceremony', description: 'Welcome & rules overview' },
+    { time: 'Saturday 1:00 PM', event: 'Team Formation', description: 'Find your perfect team' },
+    { time: 'Saturday 1:30 PM', event: 'Hacking Begins!', description: 'Let the coding commence' },
     { time: 'Saturday 6:00 PM', event: 'Dinner', description: 'Evening meal' },
+    { time: 'Saturday 8:00 PM', event: 'Tech Talks', description: 'Industry experts share insights' },
     { time: 'Saturday 11:59 PM', event: 'Midnight Snacks', description: 'Late night energy boost' },
     { time: 'Sunday 8:00 AM', event: 'Breakfast', description: 'Final fuel before submissions' },
-    { time: 'Sunday 11:00 AM', event: 'Submissions Due', description: 'Finalize your projects' },
-    { time: 'Sunday 12:00 PM', event: 'Project Presentations', description: 'Show off your work' },
-    { time: 'Sunday 3:00 PM', event: 'Awards Ceremony', description: 'Celebrate the winners!' },
-    { time: 'Sunday 4:00 PM', event: 'Closing & Wrap-up', description: 'Thank you and see you next year!' }
+    { time: 'Sunday 12:30 PM', event: 'Submissions Due', description: 'Finalize your projects' },
+    { time: 'Sunday 1:00 PM', event: 'Project Presentations', description: 'Show off your work' },
+    { time: 'Sunday 2:30 PM', event: 'Awards Ceremony', description: 'Celebrate the winners!' },
+    { time: 'Sunday 3:00 PM', event: 'Closing & Wrap-up', description: 'Thank you and see you next year!' }
   ];
 
   const tracks = [
     {
-      title: 'Web Development',
-      description: 'Build amazing web applications using modern frameworks',
-      prize: '$2,500',
-      icon: Code
-    },
-    {
-      title: 'Mobile Development',
-      description: 'Create innovative mobile apps for iOS and Android',
-      prize: '$2,500',
-      icon: Users
-    },
-    {
-      title: 'AI/ML',
-      description: 'Harness the power of artificial intelligence and machine learning',
-      prize: '$2,500',
+      title: '1st Place',
+      description: 'Best overall project across all categories',
+      prize: '$500',
       icon: Trophy
     },
     {
-      title: 'Social Good',
-      description: 'Build solutions that make a positive impact on society',
-      prize: '$2,500',
+      title: '2nd Place',
+      description: 'Second best overall project',
+      prize: '$300',
+      icon: Users
+    },
+    {
+      title: '3rd Place',
+      description: 'Third best overall project',
+      prize: '$200',
+      icon: Code
+    },
+    {
+      title: 'Theme Winner',
+      description: 'Best project that follows the hackathon theme',
+      prize: '$200',
       icon: Heart
     }
   ];
 
   const amenities = [
     { icon: Wifi, title: 'High-Speed WiFi', description: 'Blazing fast internet throughout the venue' },
-    { icon: Utensils, title: 'Free Meals', description: 'All meals and snacks provided for 48 hours' },
+    { icon: Utensils, title: 'Free Meals', description: 'All meals and snacks provided for 24 hours' },
     { icon: Coffee, title: 'Unlimited Coffee', description: 'Stay caffeinated with premium coffee and energy drinks' },
     { icon: Users, title: 'Mentorship', description: 'Industry professionals available for guidance' }
   ];
@@ -62,18 +60,18 @@ export default function InfoPage() {
     },
     {
       question: 'Do I need a team?',
-                      answer: 'You can participate solo or in teams of up to 4 people. We&rsquo;ll have team formation sessions to help you find teammates.'
+      answer: 'You can participate solo or in teams of up to 4 people. We\'ll have team formation sessions to help you find teammates.'
     },
     {
       question: 'What should I bring?',
-      answer: 'Bring your laptop, charger, any hardware you want to use, and your creativity! We&rsquo;ll provide everything else.'
+      answer: 'Bring your laptop, charger, any hardware you want to use, and your creativity! We\'ll provide everything else.'
     },
     {
       question: 'Is there a cost to participate?',
       answer: 'Nope! Hack OKState is completely free, including meals, snacks, and swag.'
     },
     {
-      question: 'What if I&rsquo;m a beginner?',
+      question: 'What if I\'m a beginner?',
       answer: 'Perfect! We have workshops, mentors, and resources specifically for beginners. This is a great place to learn!'
     }
   ];
@@ -91,7 +89,7 @@ export default function InfoPage() {
           >
             <h1 className="text-5xl font-bold">Event Information</h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Everything you need to know about Hack OKState &rsquo;25
+              Everything you need to know about Hack OKState '25
             </p>
           </motion.div>
         </div>
@@ -114,8 +112,8 @@ export default function InfoPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-osu-black">When</h3>
-                  <p className="text-gray-600">February 15-16, 2025</p>
-                  <p className="text-gray-600">Friday 6:00 PM - Sunday 4:00 PM</p>
+                  <p className="text-gray-600">September 13-14, 2025</p>
+                  <p className="text-gray-600">Saturday 12:00 PM - Sunday 3:00 PM</p>
                 </div>
               </div>
             </motion.div>
@@ -133,7 +131,7 @@ export default function InfoPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-osu-black">Where</h3>
-                  <p className="text-gray-600">Student Union Building</p>
+                  <p className="text-gray-600">CEAT Endeavor</p>
                   <p className="text-gray-600">Oklahoma State University</p>
                   <p className="text-gray-600">Stillwater, OK</p>
                 </div>
@@ -153,7 +151,7 @@ export default function InfoPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-osu-black">Duration</h3>
-                  <p className="text-gray-600">48 Hours</p>
+                  <p className="text-gray-600">24 Hours</p>
                   <p className="text-gray-600">Non-stop hacking</p>
                 </div>
               </div>
@@ -172,9 +170,9 @@ export default function InfoPage() {
             viewport={{ once: true }}
             className="text-center space-y-4 mb-16"
           >
-            <h2 className="text-4xl font-bold text-osu-black">Competition Tracks</h2>
+            <h2 className="text-4xl font-bold text-osu-black">Prize Categories</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose your track and compete for amazing prizes
+              Compete for these amazing prizes and recognition
             </p>
           </motion.div>
 
@@ -217,7 +215,7 @@ export default function InfoPage() {
           >
             <h2 className="text-4xl font-bold text-osu-black">Event Schedule</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              48 hours of non-stop innovation and fun
+              24 hours of non-stop innovation and fun
             </p>
           </motion.div>
 
@@ -259,7 +257,7 @@ export default function InfoPage() {
           >
             <h2 className="text-4xl font-bold text-osu-black">What We Provide</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Focus on coding - we&rsquo;ll take care of everything else
+              Focus on coding - we'll take care of everything else
             </p>
           </motion.div>
 
@@ -299,7 +297,7 @@ export default function InfoPage() {
           >
             <h2 className="text-4xl font-bold text-osu-black">Frequently Asked Questions</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Got questions? We&rsquo;ve got answers!
+              Got questions? We've got answers!
             </p>
           </motion.div>
 

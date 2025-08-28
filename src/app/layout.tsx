@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,13 +11,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Hack OKState &rsquo;25 | Oklahoma State University Hackathon",
-  description: "Join us for Hack OKState &rsquo;25 - Oklahoma State University&rsquo;s premier hackathon. Innovation, creativity, and collaboration await!",
+  title: "Hack OKState '25 | Oklahoma State University Hackathon",
+  description: "Join us for Hack OKState '25 - Oklahoma State University's premier hackathon. Innovation, creativity, and collaboration await!",
   keywords: "hackathon, Oklahoma State University, programming, coding, innovation, technology",
   authors: [{ name: "Hack OKState Team" }],
   openGraph: {
-    title: "Hack OKState &rsquo;25",
-    description: "Oklahoma State University&rsquo;s premier hackathon",
+    title: "Hack OKState '25",
+    description: "Oklahoma State University's premier hackathon",
     type: "website",
   },
 };
@@ -34,6 +35,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
