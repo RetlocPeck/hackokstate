@@ -21,14 +21,6 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "Hack OKState",
     locale: "en_US",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Hack OKState '25 - Oklahoma State University Hackathon",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
