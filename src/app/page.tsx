@@ -3,8 +3,50 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, MapPin, Users, Trophy, Code, Rocket, Clock, Star } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+  const [featuresVisible, setFeaturesVisible] = useState(false);
+  const [featuresTitleVisible, setFeaturesTitleVisible] = useState(false);
+  const [ctaTitleVisible, setCtaTitleVisible] = useState(false);
+  const [ctaButtonVisible, setCtaButtonVisible] = useState(false);
+
+  // Ensure component is mounted before running visibility checks
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Check what's visible on page load
+  useEffect(() => {
+    if (!mounted) return;
+    
+    const checkVisibleSections = () => {
+      const sections = [
+        { id: 'features-section', setter: setFeaturesVisible },
+        { id: 'features-title', setter: setFeaturesTitleVisible },
+        { id: 'cta-title', setter: setCtaTitleVisible },
+        { id: 'cta-button', setter: setCtaButtonVisible }
+      ];
+
+      sections.forEach(({ id, setter }) => {
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+          if (isVisible) {
+            setter(true);
+          }
+        }
+      });
+    };
+
+    // Check immediately and after a short delay to ensure DOM is ready
+    checkVisibleSections();
+    const timer = setTimeout(checkVisibleSections, 100);
+    
+    return () => clearTimeout(timer);
+  }, [mounted]);
   const features = [
     {
       icon: Trophy,
@@ -18,7 +60,7 @@ export default function Home() {
     },
     {
       icon: Star,
-      title: '$1K+ Prizes',
+      title: 'TBD Prizes',
       description: 'Amazing rewards for winners'
     },
     {
@@ -99,11 +141,11 @@ export default function Home() {
             >
               <div className="flex items-center space-x-2">
                 <Calendar className="w-5 h-5 text-osu-orange" />
-                <span className="font-medium">September 13-14, 2025</span>
+                <span className="font-medium">November 1-2, 2025</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-5 h-5 text-osu-orange" />
-                <span className="font-medium">CEAT Endeavor, OSU</span>
+                <span className="font-medium">Engineering South, OSU</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock className="w-5 h-5 text-osu-orange" />
@@ -115,13 +157,19 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-white">
+      <section id="features-section" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            id="features-title"
             initial={{ opacity: 0, y: 30 }}
+            animate={featuresTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            onViewportEnter={() => {
+              setFeaturesTitleVisible(true);
+              setFeaturesVisible(true);
+            }}
             className="text-center space-y-4 mb-16"
           >
             <h2 className="text-4xl font-bold text-osu-black">Why Hack OKState?</h2>
@@ -137,9 +185,8 @@ export default function Home() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  animate={featuresVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="text-center space-y-4 p-6 rounded-2xl hover:bg-osu-gray-light transition-all duration-300 group"
                 >
                   <div className="w-16 h-16 bg-osu-orange/10 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-osu-orange group-hover:scale-110 transition-all duration-300">
@@ -158,10 +205,13 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-osu-orange to-osu-orange-dark text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <motion.div
+            id="cta-title"
             initial={{ opacity: 0, y: 30 }}
+            animate={ctaTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            onViewportEnter={() => setCtaTitleVisible(true)}
             className="space-y-4"
           >
             <h2 className="text-4xl lg:text-5xl font-bold">Ready to Build Something Amazing?</h2>
@@ -171,10 +221,13 @@ export default function Home() {
           </motion.div>
           
           <motion.div
+            id="cta-button"
             initial={{ opacity: 0, y: 30 }}
+            animate={ctaButtonVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            onViewportEnter={() => setCtaButtonVisible(true)}
           >
             <a 
               href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415"

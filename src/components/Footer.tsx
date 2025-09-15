@@ -38,15 +38,15 @@ export default function Footer() {
               <Link href="/info" className="text-gray-400 hover:text-white transition-colors">
                 Event Info
               </Link>
+              <Link href="/team" className="text-gray-400 hover:text-white transition-colors">
+                Team
+              </Link>
+              <Link href="/sponsors" className="text-gray-400 hover:text-white transition-colors">
+                Sponsors
+              </Link>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 Register
               </a>
-              <Link href="#schedule" className="text-gray-400 hover:text-white transition-colors">
-                Schedule
-              </Link>
-              <Link href="#sponsors" className="text-gray-400 hover:text-white transition-colors">
-                Sponsors
-              </Link>
             </div>
           </div>
 
