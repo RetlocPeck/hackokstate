@@ -149,7 +149,7 @@ export default function TeamPage() {
                 initial={{ opacity: 0, y: 50 }}
                 animate={teamVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group"
+                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
               >
                 <div className="aspect-square bg-gradient-to-br from-osu-orange/20 to-osu-orange-dark/20 flex items-center justify-center relative overflow-hidden">
                   {/* Placeholder for team member photo */}
@@ -161,7 +161,7 @@ export default function TeamPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
                   <div className="text-center mb-4">
                     <h3 className="text-xl font-bold text-osu-black">{member.name}</h3>
                     <p className="text-osu-orange font-semibold">{member.role}</p>
@@ -169,7 +169,7 @@ export default function TeamPage() {
                   
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{member.bio}</p>
                   
-                  <div className="flex justify-center space-x-3">
+                  <div className="flex justify-center space-x-3 mt-auto">
                     <a
                       href={member.github}
                       target="_blank"
