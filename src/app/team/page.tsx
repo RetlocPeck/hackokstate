@@ -2,7 +2,35 @@
 
 import { motion } from 'framer-motion';
 import { Instagram, ExternalLink, Mail, Github, Linkedin } from 'lucide-react';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { teamData, type TeamMember } from '@/data/team';
+
+// Component to handle team member images with fallback
+function TeamMemberImage({ member }: { member: TeamMember }) {
+  const [imageError, setImageError] = useState(false);
+
+  if (imageError) {
+    // Show placeholder if image fails to load
+    return (
+      <div className="w-32 h-32 bg-osu-orange/30 rounded-full flex items-center justify-center">
+        <span className="text-4xl font-bold text-osu-orange">
+          {member.name.split(' ').map(n => n[0]).join('')}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <Image
+      src={member.image}
+      alt={member.name}
+      fill
+      className="object-cover"
+      onError={() => setImageError(true)}
+    />
+  );
+}
 
 export default function TeamPage() {
   const [mounted, setMounted] = useState(false);
@@ -44,62 +72,7 @@ export default function TeamPage() {
     
     return () => clearTimeout(timer);
   }, [mounted]);
-  const teamMembers = [
-    {
-      name: 'Colter Holmes',
-      role: 'Event Director',
-      bio: 'Computer Engineering student and Microsoft Software Engineering intern dedicated to organizing Hack OKState and inspiring collaboration in tech.',
-      image: '/team/colter.jpg',
-      github: 'https://github.com/retlocpeck',
-      linkedin: 'https://linkedin.com/in/colterholmes',
-      instagram: 'https://instagram.com/imcolter'
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Technical Director',
-      bio: 'Software Engineering student with experience in full-stack development and hackathon organization.',
-      image: '/team/michael.jpg',
-      github: 'https://github.com/michael',
-      linkedin: 'https://linkedin.com/in/michael',
-      instagram: 'https://instagram.com/michael'
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'Logistics Coordinator',
-      bio: 'Business and Computer Science double major focused on event planning and participant experience.',
-      image: '/team/emily.jpg',
-      github: 'https://github.com/emily',
-      linkedin: 'https://linkedin.com/in/emily',
-      instagram: 'https://instagram.com/emily'
-    },
-    {
-      name: 'David Park',
-      role: 'Sponsorship Lead',
-      bio: 'Entrepreneurship student building connections between industry and academic communities.',
-      image: '/team/david.jpg',
-      github: 'https://github.com/david',
-      linkedin: 'https://linkedin.com/in/david',
-      instagram: 'https://instagram.com/david'
-    },
-    {
-      name: 'Alex Thompson',
-      role: 'Marketing Director',
-      bio: 'Graphic Design and Computer Science student creating engaging content for the hackathon.',
-      image: '/team/alex.jpg',
-      github: 'https://github.com/alex',
-      linkedin: 'https://linkedin.com/in/alex',
-      instagram: 'https://instagram.com/alex'
-    },
-    {
-      name: 'Jessica Wu',
-      role: 'Workshop Coordinator',
-      bio: 'Computer Science graduate student organizing educational sessions and mentorship programs.',
-      image: '/team/jessica.jpg',
-      github: 'https://github.com/jessica',
-      linkedin: 'https://linkedin.com/in/jessica',
-      instagram: 'https://instagram.com/jessica'
-    }
-  ];
+  const teamMembers = teamData;
 
   return (
     <div className="min-h-screen">
@@ -143,7 +116,7 @@ export default function TeamPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
+            {teamMembers.map((member: TeamMember, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -152,12 +125,7 @@ export default function TeamPage() {
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
               >
                 <div className="aspect-square bg-gradient-to-br from-osu-orange/20 to-osu-orange-dark/20 flex items-center justify-center relative overflow-hidden">
-                  {/* Placeholder for team member photo */}
-                  <div className="w-32 h-32 bg-osu-orange/30 rounded-full flex items-center justify-center">
-                    <span className="text-4xl font-bold text-osu-orange">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
+                  <TeamMemberImage member={member} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
                 

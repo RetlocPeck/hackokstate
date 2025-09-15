@@ -3,6 +3,16 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Mail, Trophy, Zap, Star, Crown } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { sponsorsData, type Sponsor } from '@/data/sponsors';
+
+// Component to handle sponsor logos with fallback
+function SponsorLogo({ sponsor }: { sponsor: Sponsor }) {
+  return (
+    <div className="text-6xl font-bold text-osu-orange/50 text-center">
+      {sponsor.name.charAt(0)}
+    </div>
+  );
+}
 
 export default function SponsorsPage() {
   const [mounted, setMounted] = useState(false);
@@ -123,29 +133,7 @@ export default function SponsorsPage() {
     }
   ];
 
-  const currentSponsors = [
-    {
-      name: 'TechCorp',
-      tier: 'Platinum',
-      logo: '/sponsors/techcorp.png',
-      website: 'https://techcorp.com',
-      description: 'Leading technology solutions provider'
-    },
-    {
-      name: 'Innovation Labs',
-      tier: 'Gold',
-      logo: '/sponsors/innovation-labs.png',
-      website: 'https://innovationlabs.com',
-      description: 'Cutting-edge research and development'
-    },
-    {
-      name: 'StartupCo',
-      tier: 'Silver',
-      logo: '/sponsors/startupco.png',
-      website: 'https://startupco.com',
-      description: 'Fast-growing technology startup'
-    }
-  ];
+  const currentSponsors = sponsorsData;
 
   const partnerOrganizations = [
     'OSU ECE Department',
@@ -195,7 +183,7 @@ export default function SponsorsPage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {currentSponsors.map((sponsor, index) => (
+            {currentSponsors.map((sponsor: Sponsor, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -204,10 +192,7 @@ export default function SponsorsPage() {
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100"
               >
                 <div className="aspect-video bg-gradient-to-br from-osu-gray-light to-gray-100 flex items-center justify-center relative">
-                  {/* Placeholder for sponsor logo */}
-                  <div className="text-6xl font-bold text-osu-orange/50">
-                    {sponsor.name.charAt(0)}
-                  </div>
+                  <SponsorLogo sponsor={sponsor} />
                 </div>
                 
                 <div className="p-6 space-y-4">

@@ -11,22 +11,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://hackokstate.com' : 'http://localhost:3000'),
   title: "Hack OKState '25 | Oklahoma State University Hackathon",
   description: "Join us for Hack OKState '25 - Oklahoma State University's premier hackathon. Innovation, creativity, and collaboration await!",
   keywords: "hackathon, Oklahoma State University, programming, coding, innovation, technology",
   authors: [{ name: "Hack OKState Team" }],
+  icons: {
+    icon: "/hackokstate icon.ico",
+    shortcut: "/hackokstate icon.ico",
+    apple: "/hackokstate icon.ico",
+  },
   openGraph: {
     title: "Hack OKState '25",
     description: "Oklahoma State University's premier hackathon",
     type: "website",
     siteName: "Hack OKState",
     locale: "en_US",
+    images: ["/hackokstate icon.ico"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Hack OKState '25",
     description: "Oklahoma State University's premier hackathon",
-    images: ["/og-image.png"],
+    images: ["/hackokstate icon.ico"],
   },
 };
 
