@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Code, Calendar, Users } from 'lucide-react';
+import { Menu, X, Code, Calendar, Users, Heart, UserPlus } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
@@ -13,7 +13,9 @@ export default function Header() {
   const navItems = [
     { href: '/', label: 'Home', icon: Code },
     { href: '/info', label: 'Info', icon: Calendar },
-    { href: '#', label: 'Register', icon: Users, external: true },
+    { href: '/team', label: 'Team', icon: Users },
+    { href: '/sponsors', label: 'Sponsors', icon: Heart },
+    { href: '#', label: 'Register', icon: UserPlus, external: true },
   ];
 
   return (

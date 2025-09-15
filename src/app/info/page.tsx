@@ -1,9 +1,61 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Users, Trophy, Code, Coffee, Wifi, Utensils, Heart } from 'lucide-react';
+import { Calendar, Clock, MapPin, Users, Trophy, Code, Coffee, Wifi, Utensils, Heart, Brain, Rocket } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function InfoPage() {
+  const [mounted, setMounted] = useState(false);
+  const [prizesVisible, setPrizesVisible] = useState(false);
+  const [amenitiesVisible, setAmenitiesVisible] = useState(false);
+  const [eventDetailsVisible, setEventDetailsVisible] = useState(false);
+  const [prizesTitleVisible, setPrizesTitleVisible] = useState(false);
+  const [scheduleVisible, setScheduleVisible] = useState(false);
+  const [scheduleTitleVisible, setScheduleTitleVisible] = useState(false);
+  const [amenitiesTitleVisible, setAmenitiesTitleVisible] = useState(false);
+  const [faqVisible, setFaqVisible] = useState(false);
+  const [faqTitleVisible, setFaqTitleVisible] = useState(false);
+
+  // Ensure component is mounted before running visibility checks
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Check what's visible on page load
+  useEffect(() => {
+    if (!mounted) return;
+    
+    const checkVisibleSections = () => {
+      const sections = [
+        { id: 'event-details', setter: setEventDetailsVisible },
+        { id: 'prizes-section', setter: setPrizesVisible },
+        { id: 'prizes-title', setter: setPrizesTitleVisible },
+        { id: 'schedule-section', setter: setScheduleVisible },
+        { id: 'schedule-title', setter: setScheduleTitleVisible },
+        { id: 'amenities-section', setter: setAmenitiesVisible },
+        { id: 'amenities-title', setter: setAmenitiesTitleVisible },
+        { id: 'faq-section', setter: setFaqVisible },
+        { id: 'faq-title', setter: setFaqTitleVisible }
+      ];
+
+      sections.forEach(({ id, setter }) => {
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+          if (isVisible) {
+            setter(true);
+          }
+        }
+      });
+    };
+
+    // Check immediately and after a short delay to ensure DOM is ready
+    checkVisibleSections();
+    const timer = setTimeout(checkVisibleSections, 100);
+    
+    return () => clearTimeout(timer);
+  }, [mounted]);
   const schedule = [
     { time: 'Saturday 12:00 PM', event: 'Registration & Check-in', description: 'Get your badge and swag!' },
     { time: 'Saturday 12:30 PM', event: 'Opening Ceremony', description: 'Welcome & rules overview' },
@@ -23,33 +75,45 @@ export default function InfoPage() {
     {
       title: '1st Place',
       description: 'Best overall project across all categories',
-      prize: '$500',
+      prize: 'TBD',
       icon: Trophy
     },
     {
       title: '2nd Place',
       description: 'Second best overall project',
-      prize: '$300',
+      prize: 'TBD',
       icon: Users
     },
     {
       title: '3rd Place',
       description: 'Third best overall project',
-      prize: '$200',
+      prize: 'TBD',
       icon: Code
+    },
+    {
+      title: 'Best New Team',
+      description: 'Best project from a team of first-time hackathon participants',
+      prize: 'TBD',
+      icon: Heart
+    },
+    {
+      title: 'Best Use of AI',
+      description: 'Most innovative and creative use of artificial intelligence',
+      prize: 'TBD',
+      icon: Brain
     },
     {
       title: 'Theme Winner',
       description: 'Best project that follows the hackathon theme',
-      prize: '$200',
-      icon: Heart
+      prize: 'TBD',
+      icon: Rocket
     }
   ];
 
   const amenities = [
     { icon: Wifi, title: 'High-Speed WiFi', description: 'Blazing fast internet throughout the venue' },
     { icon: Utensils, title: 'Free Meals', description: 'All meals and snacks provided for 24 hours' },
-    { icon: Coffee, title: 'Unlimited Coffee', description: 'Stay caffeinated with premium coffee and energy drinks' },
+    { icon: Coffee, title: 'Unlimited Caffeine', description: 'Stay caffeinated with energy drinks' },
     { icon: Users, title: 'Mentorship', description: 'Industry professionals available for guidance' }
   ];
 
@@ -96,42 +160,45 @@ export default function InfoPage() {
       </section>
 
       {/* Event Details */}
-      <section className="py-20 bg-white">
+      <section id="event-details" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
+            initial={{ opacity: 0, x: -50 }}
+            animate={eventDetailsVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            onViewportEnter={() => setEventDetailsVisible(true)}
+            className="space-y-6"
+          >
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-osu-orange rounded-full flex items-center justify-center">
                   <Calendar className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-osu-black">When</h3>
-                  <p className="text-gray-600">September 13-14, 2025</p>
+                  <p className="text-gray-600">November 1-2, 2025</p>
                   <p className="text-gray-600">Saturday 12:00 PM - Sunday 3:00 PM</p>
                 </div>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
+            initial={{ opacity: 0, y: 50 }}
+            animate={eventDetailsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            className="space-y-6"
+          >
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-osu-orange rounded-full flex items-center justify-center">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-osu-black">Where</h3>
-                  <p className="text-gray-600">CEAT Endeavor</p>
+                  <p className="text-gray-600">Engineering South</p>
                   <p className="text-gray-600">Oklahoma State University</p>
                   <p className="text-gray-600">Stillwater, OK</p>
                 </div>
@@ -139,12 +206,13 @@ export default function InfoPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
+            initial={{ opacity: 0, x: 50 }}
+            animate={eventDetailsVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            className="space-y-6"
+          >
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-osu-orange rounded-full flex items-center justify-center">
                   <Clock className="w-6 h-6 text-white" />
@@ -161,13 +229,19 @@ export default function InfoPage() {
       </section>
 
       {/* Competition Tracks */}
-      <section className="py-20 bg-osu-gray-light">
+      <section id="prizes-section" className="py-20 bg-osu-gray-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            id="prizes-title"
             initial={{ opacity: 0, y: 30 }}
+            animate={prizesTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            onViewportEnter={() => {
+              setPrizesTitleVisible(true);
+              setPrizesVisible(true);
+            }}
             className="text-center space-y-4 mb-16"
           >
             <h2 className="text-4xl font-bold text-osu-black">Prize Categories</h2>
@@ -176,16 +250,15 @@ export default function InfoPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {tracks.map((track, index) => {
               const IconComponent = track.icon;
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  animate={prizesVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
                   <div className="space-y-4">
@@ -204,13 +277,19 @@ export default function InfoPage() {
       </section>
 
       {/* Schedule */}
-      <section className="py-20 bg-white">
+      <section id="schedule-section" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            id="schedule-title"
             initial={{ opacity: 0, y: 30 }}
+            animate={scheduleTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            onViewportEnter={() => {
+              setScheduleTitleVisible(true);
+              setScheduleVisible(true);
+            }}
             className="text-center space-y-4 mb-16"
           >
             <h2 className="text-4xl font-bold text-osu-black">Event Schedule</h2>
@@ -225,9 +304,8 @@ export default function InfoPage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  animate={scheduleVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
-                  viewport={{ once: true }}
                   className="flex items-center space-x-6 p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-all duration-300"
                 >
                   <div className="w-24 text-right">
@@ -246,13 +324,19 @@ export default function InfoPage() {
       </section>
 
       {/* Amenities */}
-      <section className="py-20 bg-osu-gray-light">
+      <section id="amenities-section" className="py-20 bg-osu-gray-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            id="amenities-title"
             initial={{ opacity: 0, y: 30 }}
+            animate={amenitiesTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            onViewportEnter={() => {
+              setAmenitiesTitleVisible(true);
+              setAmenitiesVisible(true);
+            }}
             className="text-center space-y-4 mb-16"
           >
             <h2 className="text-4xl font-bold text-osu-black">What We Provide</h2>
@@ -268,9 +352,8 @@ export default function InfoPage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                  animate={amenitiesVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="text-center space-y-4 p-6"
                 >
                   <div className="w-16 h-16 bg-osu-orange/10 rounded-2xl flex items-center justify-center mx-auto">
@@ -286,13 +369,19 @@ export default function InfoPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-white">
+      <section id="faq-section" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
+            id="faq-title"
             initial={{ opacity: 0, y: 30 }}
+            animate={faqTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: '-200px', amount: 0.1 }}
+            onViewportEnter={() => {
+              setFaqTitleVisible(true);
+              setFaqVisible(true);
+            }}
             className="text-center space-y-4 mb-16"
           >
             <h2 className="text-4xl font-bold text-osu-black">Frequently Asked Questions</h2>
@@ -306,9 +395,8 @@ export default function InfoPage() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                animate={faqVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300"
               >
                 <h3 className="text-xl font-semibold text-osu-black mb-4">{item.question}</h3>
