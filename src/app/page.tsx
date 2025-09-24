@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Calendar, MapPin, Users, Trophy, Code, Rocket, Clock, Star } from 'lucide-react';
+import { Calendar, MapPin, Users, Trophy, Code, Rocket, Clock, Star, MessageSquare } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -47,6 +47,7 @@ export default function Home() {
     
     return () => clearTimeout(timer);
   }, [mounted]);
+
   const features = [
     {
       icon: Trophy,
@@ -81,7 +82,7 @@ export default function Home() {
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8 }}
             className="text-center space-y-8"
           >
@@ -89,7 +90,7 @@ export default function Home() {
               <motion.h1 
                 className="text-5xl sm:text-6xl lg:text-7xl font-bold"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <span className="text-osu-black">Hack</span>{' '}
@@ -100,7 +101,7 @@ export default function Home() {
               <motion.p 
                 className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 Oklahoma State University's premier hackathon. 24 hours of innovation, 
@@ -111,7 +112,7 @@ export default function Home() {
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <a 
@@ -122,6 +123,16 @@ export default function Home() {
               >
                 <Rocket className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                 <span>Register Now</span>
+              </a>
+              
+              <a 
+                href="https://discord.gg/NkrYgaUnAN"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              >
+                <MessageSquare className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span>Join Discord</span>
               </a>
               
               <Link 
@@ -136,7 +147,7 @@ export default function Home() {
             <motion.div 
               className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-gray-600"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              animate={mounted ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <div className="flex items-center space-x-2">
@@ -228,6 +239,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
             onViewportEnter={() => setCtaButtonVisible(true)}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <a 
               href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415"
@@ -237,6 +249,16 @@ export default function Home() {
             >
               <Users className="w-5 h-5" />
               <span>Register for Hack OKState '25</span>
+            </a>
+            
+            <a 
+              href="https://discord.gg/NkrYgaUnAN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-3 bg-[#5865F2] text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-[#4752C4] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
+              <MessageSquare className="w-5 h-5" />
+              <span>Join Our Discord</span>
             </a>
           </motion.div>
         </div>

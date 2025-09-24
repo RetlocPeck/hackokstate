@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Code, Calendar, Users, Heart, UserPlus } from 'lucide-react';
+import { Menu, X, Code, Calendar, Users, Heart, UserPlus, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
@@ -15,6 +15,7 @@ export default function Header() {
     { href: '/info', label: 'Info', icon: Calendar },
     { href: '/team', label: 'Team', icon: Users },
     { href: '/sponsors', label: 'Sponsors', icon: Heart },
+    { href: 'https://discord.gg/NkrYgaUnAN', label: 'Discord', icon: MessageSquare, external: true },
     { href: '#', label: 'Register', icon: UserPlus, external: true },
   ];
 
@@ -37,10 +38,15 @@ export default function Header() {
             {navItems.map((item) => {
               const IconComponent = item.icon;
               if (item.external) {
+                let href = item.href;
+                // Use the register form URL for Register button
+                if (item.label === 'Register') {
+                  href = "https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415";
+                }
                 return (
                   <a
                     key={item.href}
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415"
+                    href={href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-gray-700 hover:text-osu-orange transition-colors font-medium"
@@ -91,10 +97,15 @@ export default function Header() {
                 {navItems.map((item) => {
                   const IconComponent = item.icon;
                   if (item.external) {
+                    let href = item.href;
+                    // Use the register form URL for Register button
+                    if (item.label === 'Register') {
+                      href = "https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415";
+                    }
                     return (
                       <a
                         key={item.href}
-                        href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415"
+                        href={href}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setIsMenuOpen(false)}
