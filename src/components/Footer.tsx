@@ -12,14 +12,14 @@ export default function Footer() {
 
   return (
     <footer className="bg-osu-black text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">
+            <h3 className="text-xl sm:text-2xl font-bold">
               Hack OKState <span className="text-osu-orange">'25</span>
             </h3>
-            <p className="text-gray-400 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-400 leading-relaxed">
               Oklahoma State University's premier hackathon bringing together innovators, 
               creators, and problem solvers for an unforgettable weekend of coding.
             </p>
@@ -31,24 +31,24 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-osu-orange">Quick Links</h4>
+            <h4 className="text-base sm:text-lg font-semibold text-osu-orange">Quick Links</h4>
             <div className="flex flex-col space-y-2">
-              <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                 Home
               </Link>
-              <Link href="/info" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/info" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                 Event Info
               </Link>
-              <Link href="/team" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/team" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                 Team
               </Link>
-              <Link href="/sponsors" className="text-gray-400 hover:text-white transition-colors">
+              <Link href="/sponsors" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                 Sponsors
               </Link>
-              <a href="https://discord.gg/NkrYgaUnAN" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://discord.gg/NkrYgaUnAN" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                 Discord
               </a>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                 Register
               </a>
             </div>
@@ -56,23 +56,23 @@ export default function Footer() {
 
           {/* Contact & Social */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-osu-orange">Connect With Us</h4>
-            <div className="flex space-x-4">
+            <h4 className="text-base sm:text-lg font-semibold text-osu-orange">Connect With Us</h4>
+            <div className="flex space-x-3 sm:space-x-4">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
                   <a
                     key={social.label}
                     href={social.href}
-                    className="w-10 h-10 bg-osu-gray-dark rounded-full flex items-center justify-center hover:bg-osu-orange transition-colors"
+                    className="w-9 h-9 sm:w-10 sm:h-10 bg-osu-gray-dark rounded-full flex items-center justify-center hover:bg-osu-orange transition-colors"
                     aria-label={social.label}
                   >
-                    <IconComponent className="w-5 h-5" />
+                    <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
                   </a>
                 );
               })}
             </div>
-            <div className="text-gray-400 text-sm">
+            <div className="text-gray-400 text-xs sm:text-sm">
               <p>Questions? Email us at:</p>
               <a href="mailto:hackokstate@okstate.edu" className="text-osu-orange hover:text-osu-orange-light">
                 hackokstate@okstate.edu
@@ -81,8 +81,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
+          <p className="text-gray-400 text-xs sm:text-sm px-4">
             © 2025 Hack OKState. All rights reserved. Made with ❤️ at Oklahoma State University.
           </p>
         </div>

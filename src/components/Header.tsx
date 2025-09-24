@@ -28,13 +28,13 @@ export default function Header() {
             <div className="w-8 h-8 bg-osu-orange rounded-lg flex items-center justify-center group-hover:bg-osu-orange-dark transition-colors">
               <Code className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-xl text-osu-black">
+            <span className="font-bold text-lg sm:text-xl text-osu-black">
               Hack OKState <span className="text-osu-orange">'25</span>
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {navItems.map((item) => {
               const IconComponent = item.icon;
               if (item.external) {
@@ -49,7 +49,7 @@ export default function Header() {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-gray-700 hover:text-osu-orange transition-colors font-medium"
+                    className="flex items-center space-x-1 lg:space-x-2 text-gray-700 hover:text-osu-orange transition-colors font-medium text-sm lg:text-base"
                   >
                     <IconComponent className="w-4 h-4" />
                     <span>{item.label}</span>
@@ -60,7 +60,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center space-x-2 text-gray-700 hover:text-osu-orange transition-colors font-medium"
+                  className="flex items-center space-x-1 lg:space-x-2 text-gray-700 hover:text-osu-orange transition-colors font-medium text-sm lg:text-base"
                 >
                   <IconComponent className="w-4 h-4" />
                   <span>{item.label}</span>
@@ -109,7 +109,7 @@ export default function Header() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setIsMenuOpen(false)}
-                        className="flex items-center space-x-3 text-gray-700 hover:text-osu-orange transition-colors font-medium py-2"
+                        className="flex items-center space-x-3 text-gray-700 hover:text-osu-orange transition-colors font-medium py-3 text-base"
                       >
                         <IconComponent className="w-5 h-5" />
                         <span>{item.label}</span>
@@ -121,7 +121,7 @@ export default function Header() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center space-x-3 text-gray-700 hover:text-osu-orange transition-colors font-medium py-2"
+                      className="flex items-center space-x-3 text-gray-700 hover:text-osu-orange transition-colors font-medium py-3 text-base"
                     >
                       <IconComponent className="w-5 h-5" />
                       <span>{item.label}</span>

@@ -143,7 +143,7 @@ export default function InfoPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-osu-orange to-osu-orange-dark text-white py-20">
+      <section className="bg-gradient-to-br from-osu-orange to-osu-orange-dark text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -151,8 +151,8 @@ export default function InfoPage() {
             transition={{ duration: 0.8 }}
             className="text-center space-y-6"
           >
-            <h1 className="text-5xl font-bold">Event Information</h1>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Event Information</h1>
+            <p className="text-lg sm:text-xl opacity-90 max-w-3xl mx-auto px-4">
               Everything you need to know about Hack OKState '25
             </p>
           </motion.div>
@@ -160,9 +160,9 @@ export default function InfoPage() {
       </section>
 
       {/* Event Details */}
-      <section id="event-details" className="py-20 bg-white">
+      <section id="event-details" className="py-12 sm:py-16 md:py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
             <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={mounted && eventDetailsVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -234,7 +234,7 @@ export default function InfoPage() {
           <motion.div
             id="prizes-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && prizesTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -244,7 +244,7 @@ export default function InfoPage() {
             }}
             className="text-center space-y-4 mb-16"
           >
-            <h2 className="text-4xl font-bold text-osu-black">Prize Categories</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-osu-black">Prize Categories</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Compete for these amazing prizes and recognition
             </p>
@@ -257,7 +257,7 @@ export default function InfoPage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
-                  animate={mounted && prizesVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
                 >
@@ -282,7 +282,7 @@ export default function InfoPage() {
           <motion.div
             id="schedule-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && scheduleTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -292,7 +292,7 @@ export default function InfoPage() {
             }}
             className="text-center space-y-4 mb-16"
           >
-            <h2 className="text-4xl font-bold text-osu-black">Event Schedule</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-osu-black">Event Schedule</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               24 hours of non-stop innovation and fun
             </p>
@@ -304,7 +304,7 @@ export default function InfoPage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -50 }}
-                  animate={mounted && scheduleVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                  animate={mounted ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="flex items-center space-x-6 p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg transition-all duration-300"
                 >
@@ -329,7 +329,7 @@ export default function InfoPage() {
           <motion.div
             id="amenities-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && amenitiesTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -352,7 +352,7 @@ export default function InfoPage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
-                  animate={mounted && amenitiesVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="text-center space-y-4 p-6"
                 >
@@ -374,7 +374,7 @@ export default function InfoPage() {
           <motion.div
             id="faq-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && faqTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -395,7 +395,7 @@ export default function InfoPage() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={mounted && faqVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-all duration-300"
               >
