@@ -9,6 +9,7 @@ import { teamData, type TeamMember } from '@/data/team';
 // Component to handle team member images with fallback
 function TeamMemberImage({ member }: { member: TeamMember }) {
   const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   if (imageError) {
     // Show placeholder if image fails to load
@@ -22,13 +23,22 @@ function TeamMemberImage({ member }: { member: TeamMember }) {
   }
 
   return (
-    <Image
-      src={member.image}
-      alt={member.name}
-      fill
-      className="object-cover"
-      onError={() => setImageError(true)}
-    />
+    <div className="relative w-32 h-32 rounded-full overflow-hidden">
+      {!imageLoaded && (
+        <div className="absolute inset-0 bg-osu-orange/20 animate-pulse rounded-full" />
+      )}
+      <Image
+        src={member.image}
+        alt={member.name}
+        fill
+        className={`object-cover transition-opacity duration-300 ${
+          imageLoaded ? 'opacity-100' : 'opacity-0'
+        }`}
+        onLoad={() => setImageLoaded(true)}
+        onError={() => setImageError(true)}
+        sizes="128px"
+      />
+    </div>
   );
 }
 
@@ -81,7 +91,7 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8 }}
             className="text-center space-y-6"
           >
@@ -99,7 +109,7 @@ export default function TeamPage() {
           <motion.div
             id="team-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={teamTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted && teamTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -120,7 +130,7 @@ export default function TeamPage() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
-                animate={teamVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                animate={mounted && teamVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group h-full flex flex-col"
               >
@@ -138,33 +148,39 @@ export default function TeamPage() {
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">{member.bio}</p>
                   
                   <div className="flex justify-center space-x-3 mt-auto">
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
-                      aria-label={`${member.name} GitHub`}
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                    <a
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
-                      aria-label={`${member.name} LinkedIn`}
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                    <a
-                      href={member.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-8 h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
-                      aria-label={`${member.name} Instagram`}
-                    >
-                      <Instagram className="w-4 h-4" />
-                    </a>
+                    {member.github && (
+                      <a
+                        href={member.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
+                        aria-label={`${member.name} GitHub`}
+                      >
+                        <Github className="w-4 h-4" />
+                      </a>
+                    )}
+                    {member.linkedin && (
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
+                        aria-label={`${member.name} LinkedIn`}
+                      >
+                        <Linkedin className="w-4 h-4" />
+                      </a>
+                    )}
+                    {member.instagram && (
+                      <a
+                        href={member.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-8 h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
+                        aria-label={`${member.name} Instagram`}
+                      >
+                        <Instagram className="w-4 h-4" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -178,7 +194,7 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={joinTeamVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted && joinTeamVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}

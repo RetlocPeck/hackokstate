@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { Github, Twitter, Instagram, Mail, MapPin } from 'lucide-react';
+import { Github, Twitter, Instagram, Mail, MapPin, MessageSquare } from 'lucide-react';
 
 export default function Footer() {
   const socialLinks = [
+    { icon: MessageSquare, href: 'https://discord.gg/NkrYgaUnAN', label: 'Discord' },
     { icon: Github, href: '#', label: 'GitHub' },
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Instagram, href: '#', label: 'Instagram' },
@@ -44,6 +45,9 @@ export default function Footer() {
               <Link href="/sponsors" className="text-gray-400 hover:text-white transition-colors">
                 Sponsors
               </Link>
+              <a href="https://discord.gg/NkrYgaUnAN" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                Discord
+              </a>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                 Register
               </a>
