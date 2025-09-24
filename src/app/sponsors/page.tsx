@@ -144,7 +144,7 @@ export default function SponsorsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-osu-orange to-osu-orange-dark text-white py-20">
+      <section className="bg-gradient-to-br from-osu-orange to-osu-orange-dark text-white py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -152,7 +152,7 @@ export default function SponsorsPage() {
             transition={{ duration: 0.8 }}
             className="text-center space-y-6"
           >
-            <h1 className="text-5xl font-bold">Our Sponsors</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">Our Sponsors</h1>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
               Thank you to our amazing sponsors who make Hack OKState '25 possible
             </p>
@@ -166,7 +166,7 @@ export default function SponsorsPage() {
           <motion.div
             id="sponsors-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && sponsorsTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -187,7 +187,7 @@ export default function SponsorsPage() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
-                animate={mounted && sponsorsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group border border-gray-100"
               >
@@ -227,7 +227,7 @@ export default function SponsorsPage() {
           <motion.div
             id="tiers-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && tiersTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -237,7 +237,7 @@ export default function SponsorsPage() {
             }}
             className="text-center space-y-4 mb-16"
           >
-            <h2 className="text-4xl font-bold text-osu-black">Sponsorship Opportunities</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-osu-black">Sponsorship Opportunities</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Partner with us to support the next generation of innovators
             </p>
@@ -250,7 +250,7 @@ export default function SponsorsPage() {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
-                  animate={mounted && tiersVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                  animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
                 >
@@ -282,7 +282,7 @@ export default function SponsorsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && tiersVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -299,7 +299,7 @@ export default function SponsorsPage() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
-                animate={mounted && tiersVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-white border-2 border-osu-orange/20 rounded-2xl p-6 hover:border-osu-orange hover:shadow-lg transition-all duration-300"
               >
@@ -322,7 +322,7 @@ export default function SponsorsPage() {
           <motion.div
             id="partners-title"
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && partnersTitleVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
@@ -343,7 +343,7 @@ export default function SponsorsPage() {
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={mounted && partnersVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-white border border-gray-200 rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300"
               >
@@ -359,7 +359,7 @@ export default function SponsorsPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={mounted && ctaVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: '-200px', amount: 0.1 }}
