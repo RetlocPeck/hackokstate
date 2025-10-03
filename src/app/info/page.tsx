@@ -57,18 +57,19 @@ export default function InfoPage() {
     return () => clearTimeout(timer);
   }, [mounted]);
   const schedule = [
-    { time: 'Saturday 12:00 PM', event: 'Registration & Check-in', description: 'Get your badge and swag!' },
-    { time: 'Saturday 12:30 PM', event: 'Opening Ceremony', description: 'Welcome & rules overview' },
-    { time: 'Saturday 1:00 PM', event: 'Team Formation', description: 'Find your perfect team' },
-    { time: 'Saturday 1:30 PM', event: 'Hacking Begins!', description: 'Let the coding commence' },
+    { time: 'Saturday 9:30 AM', event: 'Doors Open & Check-in', description: 'Get your badge and swag!' },
+    { time: 'Saturday 11:30 AM', event: 'Opening Ceremony', description: 'Welcome & rules overview' },
+    { time: 'Saturday 12:00 PM', event: 'Hacking Begins!', description: 'Let the coding commence' },
+    { time: 'Saturday 1:00 PM', event: 'Lunch', description: 'Midday meal to fuel your creativity' },
     { time: 'Saturday 6:00 PM', event: 'Dinner', description: 'Evening meal' },
     { time: 'Saturday 8:00 PM', event: 'Tech Talks', description: 'Industry experts share insights' },
     { time: 'Saturday 11:59 PM', event: 'Midnight Snacks', description: 'Late night energy boost' },
     { time: 'Sunday 8:00 AM', event: 'Breakfast', description: 'Final fuel before submissions' },
-    { time: 'Sunday 12:30 PM', event: 'Submissions Due', description: 'Finalize your projects' },
-    { time: 'Sunday 1:00 PM', event: 'Project Presentations', description: 'Show off your work' },
-    { time: 'Sunday 2:30 PM', event: 'Awards Ceremony', description: 'Celebrate the winners!' },
-    { time: 'Sunday 3:00 PM', event: 'Closing & Wrap-up', description: 'Thank you and see you next year!' }
+    { time: 'Sunday 12:00 PM', event: 'Hacking Ends', description: 'Time to finalize your projects' },
+    { time: 'Sunday 12:30 PM', event: 'Judging Begins', description: 'Present your projects to judges' },
+    { time: 'Sunday 1:30 PM', event: 'Judging Ends', description: 'All presentations complete' },
+    { time: 'Sunday 2:00 PM', event: 'Closing Ceremony', description: 'Awards and celebration!' },
+    { time: 'Sunday 2:30 PM', event: 'Event Ends', description: 'Thank you and see you next year!' }
   ];
 
   const tracks = [
