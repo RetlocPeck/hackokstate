@@ -14,7 +14,7 @@ function TeamMemberImage({ member }: { member: TeamMember }) {
   if (imageError) {
     // Show placeholder if image fails to load
     return (
-      <div className="w-32 h-32 bg-osu-orange/30 rounded-full flex items-center justify-center">
+      <div className="absolute inset-0 bg-osu-orange/30 flex items-center justify-center">
         <span className="text-4xl font-bold text-osu-orange">
           {member.name.split(' ').map(n => n[0]).join('')}
         </span>
@@ -23,9 +23,9 @@ function TeamMemberImage({ member }: { member: TeamMember }) {
   }
 
   return (
-    <div className="relative w-32 h-32 rounded-full overflow-hidden">
+    <>
       {!imageLoaded && (
-        <div className="absolute inset-0 bg-osu-orange/20 animate-pulse rounded-full" />
+        <div className="absolute inset-0 bg-osu-orange/20 animate-pulse" />
       )}
       <Image
         src={member.image}
@@ -36,9 +36,9 @@ function TeamMemberImage({ member }: { member: TeamMember }) {
         }`}
         onLoad={() => setImageLoaded(true)}
         onError={() => setImageError(true)}
-        sizes="128px"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       />
-    </div>
+    </>
   );
 }
 
@@ -153,7 +153,7 @@ export default function TeamPage() {
                         href={member.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
+                        className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 text-gray-700 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
                         aria-label={`${member.name} GitHub`}
                       >
                         <Github className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -164,7 +164,7 @@ export default function TeamPage() {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
+                        className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 text-gray-700 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
                         aria-label={`${member.name} LinkedIn`}
                       >
                         <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -175,7 +175,7 @@ export default function TeamPage() {
                         href={member.instagram}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
+                        className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 text-gray-700 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
                         aria-label={`${member.name} Instagram`}
                       >
                         <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />

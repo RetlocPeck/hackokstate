@@ -168,7 +168,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features-section" className="py-12 sm:py-16 md:py-20 bg-white">
+      <section id="features-section" className="py-12 sm:py-16 md:py-20 bg-osu-gray-light">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             id="features-title"
@@ -198,7 +198,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 50 }}
                   animate={featuresVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
-                  className="text-center space-y-4 p-4 sm:p-6 rounded-2xl hover:bg-osu-gray-light transition-all duration-300 group"
+                  className="text-center space-y-4 p-4 sm:p-6 rounded-2xl bg-white hover:bg-white/80 shadow-sm hover:shadow-md transition-all duration-300 group"
                 >
                   <div className="w-16 h-16 bg-osu-orange/10 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-osu-orange group-hover:scale-110 transition-all duration-300">
                     <IconComponent className="w-8 h-8 text-osu-orange group-hover:text-white" />
