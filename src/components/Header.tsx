@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, Code, Calendar, Users, Heart, UserPlus, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -38,10 +39,13 @@ export default function Header() {
           zIndex: 10000
         }}
       >
-        <img
+        <Image
           src="/mlh-logo-color.png"
           alt="Major League Hacking 2025 Hackathon Season"
+          width={100}
+          height={200}
           className="w-full"
+          priority
         />
       </a>
       
