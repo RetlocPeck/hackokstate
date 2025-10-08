@@ -138,6 +138,10 @@ export default function InfoPage() {
     {
       question: 'What if I\'m a beginner?',
       answer: 'Perfect! We have workshops, mentors, and resources specifically for beginners. This is a great place to learn!'
+    },
+    {
+      question: 'What is your Code of Conduct?',
+      answer: 'We follow the MLH Code of Conduct to ensure a safe and inclusive environment for all participants. Harassment of any kind will not be tolerated. View the full Code of Conduct at /code-of-conduct.md or contact us at incidents@mlh.io for any concerns.'
     }
   ];
 

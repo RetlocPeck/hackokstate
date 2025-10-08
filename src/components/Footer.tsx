@@ -51,6 +51,9 @@ export default function Footer() {
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkK7cdHguJkm0dvn5fz7TA5MBc9hVRMcQ3lNaG7_nY0gL5SA/viewform?usp=sharing&ouid=110797256475146890415" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                 Register
               </a>
+              <a href="/code-of-conduct.md" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
+                Code of Conduct
+              </a>
             </div>
           </div>
 
@@ -84,6 +87,10 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center">
           <p className="text-gray-400 text-xs sm:text-sm px-4">
             © 2025 Hack OKState. All rights reserved. Made with ❤️ at Oklahoma State University.
+            <br />
+            <a href="/code-of-conduct.md" target="_blank" rel="noopener noreferrer" className="text-osu-orange hover:text-osu-orange-light underline">
+              MLH Code of Conduct
+            </a>
           </p>
         </div>
       </div>

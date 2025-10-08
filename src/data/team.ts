@@ -6,6 +6,7 @@ export interface TeamMember {
   github: string;
   linkedin: string;
   instagram: string;
+  website: string;
 }
 
 export const teamData: TeamMember[] = [
@@ -16,7 +17,8 @@ export const teamData: TeamMember[] = [
     image: "/team/colter.jpg",
     github: "https://github.com/retlocpeck",
     linkedin: "https://linkedin.com/in/colterholmes",
-    instagram: "https://instagram.com/imcolter"
+    instagram: "https://instagram.com/imcolter",
+    website: ""
   },
   {
     name: "Ricardo Mulino",
@@ -25,7 +27,8 @@ export const teamData: TeamMember[] = [
     image: "/team/michael.jpg",
     github: "",
     linkedin: "",
-    instagram: ""
+    instagram: "",
+    website: ""
   },
   {
     name: "Alex Carter",
@@ -34,7 +37,8 @@ export const teamData: TeamMember[] = [
     image: "/team/emily.jpg",
     github: "",
     linkedin: "",
-    instagram: ""
+    instagram: "",
+    website: ""
   },
   {
     name: "Katy Wagner",
@@ -43,7 +47,18 @@ export const teamData: TeamMember[] = [
     image: "/team/david.jpg",
     github: "",
     linkedin: "",
-    instagram: ""
+    instagram: "",
+    website: ""
+  },
+  {
+    name: "Jase Scott",
+    role: "Organizer",
+    bio: "I find enjoyment in exploring applications for programming. I've explored a lot; everything between Graphics Programming, VR/AR, Game Design Oriented Programming, and even Fullstack. I've still got a long way to go until I carve out my own little corner of the industry, but I certainly am enjoying the journey. When I'm not programming, I'm either in the mountains or cooking!.",
+    image: "/team/jase.jpg",
+    github: "https://github.com/JScott3234",
+    linkedin: "https://www.linkedin.com/in/jase-scott-a76980309",
+    instagram: "",
+    website: "https://jscott3234.github.io/"
   },
   {
     name: "Savannah Hamblin",
@@ -52,7 +67,8 @@ export const teamData: TeamMember[] = [
     image: "/team/alex.jpg",
     github: "",
     linkedin: "",
-    instagram: ""
+    instagram: "",
+    website: ""
   },
   {
     name: "Justin Muoa",
@@ -61,7 +77,8 @@ export const teamData: TeamMember[] = [
     image: "/team/jessica.jpg",
     github: "https://github.com/JustinMoua",
     linkedin: "https://www.linkedin.com/in/justin-moua/",
-    instagram: ""
+    instagram: "",
+    website: ""
   },
   {
     name: "Charles Bruce",
@@ -70,7 +87,8 @@ export const teamData: TeamMember[] = [
     image: "/team/jessica.jpg",
     github: "https://github.com/Flubberknuckle",
     linkedin: "https://www.linkedin.com/in/charles-bruce-169431244/",
-    instagram: ""
+    instagram: "",
+    website: ""
   },
   {
     name: "Danny Nguyen",
@@ -79,6 +97,7 @@ export const teamData: TeamMember[] = [
     image: "/team/jessica.jpg",
     github: "https://github.com/codingpenguin",
     linkedin: "https://linkedin.com/in/danmaruchi",
-    instagram: "https://instagram.com/danmaruchi"
+    instagram: "https://instagram.com/danmaruchi",
+    website: ""
   }
 ];

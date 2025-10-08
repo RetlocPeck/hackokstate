@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Instagram, ExternalLink, Mail, Github, Linkedin } from 'lucide-react';
+import { Instagram, ExternalLink, Mail, Github, Linkedin, Globe } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { teamData, type TeamMember } from '@/data/team';
@@ -179,6 +179,17 @@ export default function TeamPage() {
                         aria-label={`${member.name} Instagram`}
                       >
                         <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
+                      </a>
+                    )}
+                    {member.website && (
+                      <a
+                        href={member.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-7 h-7 sm:w-8 sm:h-8 bg-gray-100 text-gray-700 hover:bg-osu-orange hover:text-white rounded-full flex items-center justify-center transition-colors"
+                        aria-label={`${member.name} Website`}
+                      >
+                        <Globe className="w-3 h-3 sm:w-4 sm:h-4" />
                       </a>
                     )}
                   </div>
