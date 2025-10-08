@@ -21,34 +21,6 @@ export default function Header() {
   ];
 
   return (
-    <>
-      {/* MLH Trust Badge */}
-      <a
-        id="mlh-trust-badge"
-        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed top-0 right-12 z-[60] w-24 hidden md:block"
-        style={{ 
-          display: 'block',
-          maxWidth: '100px',
-          minWidth: '60px',
-          right: '50px',
-          top: '0',
-          width: '10%',
-          zIndex: 10000
-        }}
-      >
-        <Image
-          src="/mlh-logo-color.png"
-          alt="Major League Hacking 2025 Hackathon Season"
-          width={100}
-          height={200}
-          className="w-full"
-          priority
-        />
-      </a>
-      
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -96,6 +68,22 @@ export default function Header() {
                 </Link>
               );
             })}
+            {/* MLH Trust Badge */}
+            <a
+              href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center"
+            >
+              <Image
+                src="/mlh-logo-color.svg"
+                alt="MLH 2025"
+                width={40}
+                height={80}
+                className="h-10 w-auto"
+                priority
+              />
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -163,6 +151,5 @@ export default function Header() {
         </AnimatePresence>
       </nav>
     </header>
-    </>
   );
 }

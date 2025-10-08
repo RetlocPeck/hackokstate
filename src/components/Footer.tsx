@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Github, Twitter, Instagram, Mail, MapPin, MessageSquare } from 'lucide-react';
 
 export default function Footer() {
@@ -79,6 +80,23 @@ export default function Footer() {
               <p>Questions? Email us at:</p>
               <a href="mailto:hackokstate@okstate.edu" className="text-osu-orange hover:text-osu-orange-light">
                 hackokstate@okstate.edu
+              </a>
+            </div>
+            {/* MLH Trust Badge */}
+            <div className="pt-4">
+              <a
+                href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Image
+                  src="/mlh-logo-white.svg"
+                  alt="MLH 2025 Hackathon Season"
+                  width={60}
+                  height={120}
+                  className="h-16 w-auto"
+                />
               </a>
             </div>
           </div>

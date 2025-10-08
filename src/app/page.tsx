@@ -61,7 +61,7 @@ export default function Home() {
     },
     {
       icon: Star,
-      title: 'TBD Prizes',
+      title: '$2K+ Prizes',
       description: 'Amazing rewards for winners'
     },
     {
