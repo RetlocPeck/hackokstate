@@ -18,23 +18,23 @@ export const teamData: TeamMember[] = [
     github: "https://github.com/retlocpeck",
     linkedin: "https://linkedin.com/in/colterholmes",
     instagram: "https://instagram.com/imcolter",
-    website: ""
+    website: "https://heardle.live"
   },
   {
     name: "Ricardo Mulino",
     role: "Co-Director",
-    bio: "Software Engineering student with experience in full-stack development and hackathon organization.",
-    image: "/team/michael.jpg",
+    bio: "Computer Science student, ex-Google intern, President of ACM OSU chapter dedicated to bolstering interest in coding and overall computing at Oklahoma State.",
+    image: "/team/ricardo.jpg",
     github: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/ricardomulino",
     instagram: "",
     website: ""
   },
   {
     name: "Alex Carter",
     role: "Finance Director",
-    bio: "Business and Computer Science double major focused on event planning and participant experience.",
-    image: "/team/emily.jpg",
+    bio: "I am an Electrical Engineering student interested in power and energy. I am the treasurer in IEEE and I am a big fan of automation, computer science, and artificial intelligence. I have a collection of playing cards from different places, love the outdoors, and creative writing!",
+    image: "/team/alex.jpg",
     github: "",
     linkedin: "",
     instagram: "",
@@ -43,10 +43,10 @@ export const teamData: TeamMember[] = [
   {
     name: "Katy Wagner",
     role: "Category Lead",
-    bio: "Placeholder.",
-    image: "/team/david.jpg",
+    bio: "Electrical and Computer engineering student with an interest in cybersecurity and a 1st degree black belt in Taekwondo.",
+    image: "/team/katy.jpg",
     github: "",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/katrina-wagner-820619248",
     instagram: "",
     website: ""
   },
