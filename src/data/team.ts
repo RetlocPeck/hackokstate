@@ -64,7 +64,7 @@ export const teamData: TeamMember[] = [
     name: "Savannah Hamblin",
     role: "Organizer",
     bio: "Placeholder.",
-    image: "/team/alex.jpg",
+    image: "/team/savannah.jpg",
     github: "",
     linkedin: "",
     instagram: "",
