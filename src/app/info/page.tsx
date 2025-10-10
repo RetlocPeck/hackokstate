@@ -65,11 +65,12 @@ export default function InfoPage() {
     { time: 'Saturday 8:00 PM', event: 'Tech Talks', description: 'Industry experts share insights' },
     { time: 'Saturday 11:59 PM', event: 'Midnight Snacks', description: 'Late night energy boost' },
     { time: 'Sunday 8:00 AM', event: 'Breakfast', description: 'Final fuel before submissions' },
-    { time: 'Sunday 12:00 PM', event: 'Hacking Ends', description: 'Time to finalize your projects' },
-    { time: 'Sunday 12:30 PM', event: 'Judging Begins', description: 'Present your projects to judges' },
-    { time: 'Sunday 2:00 PM', event: 'Judging Ends', description: 'All presentations complete' },
-    { time: 'Sunday 2:30 PM', event: 'Closing Ceremony', description: 'Awards and celebration!' },
-    { time: 'Sunday 3:00 PM', event: 'Event Ends', description: 'Thank you and see you next year!' }
+    { time: 'Sunday 12:00 PM', event: 'Hacking Ends (Soft Deadline)', description: 'Time to finalize your projects' },
+    { time: 'Sunday 12:30 PM', event: 'Submissions Deadline & Lunch', description: 'Hard deadline for submissions' },
+    { time: 'Sunday 1:00 PM', event: 'Judging Begins', description: 'Present your projects to judges' },
+    { time: 'Sunday 2:30 PM', event: 'Judging Ends', description: 'All presentations complete' },
+    { time: 'Sunday 3:00 PM', event: 'Closing Ceremony', description: 'Awards and celebration!' },
+    { time: 'Sunday 3:30 PM', event: 'Event Ends', description: 'Thank you and see you next year!' }
   ];
 
   const tracks = [

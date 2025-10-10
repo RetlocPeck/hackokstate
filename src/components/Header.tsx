@@ -21,6 +21,33 @@ export default function Header() {
   ];
 
   return (
+    <>
+      {/* MLH Trust Badge - 3D Banner Effect */}
+      <a
+        id="mlh-trust-badge"
+        href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2026-season&utm_content=white"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: 'block',
+          maxWidth: '100px',
+          minWidth: '60px',
+          position: 'fixed',
+          right: '50px',
+          top: '0',
+          width: '10%',
+          zIndex: 10000
+        }}
+        className="hidden md:block"
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="https://s3.amazonaws.com/logged-assets/trust-badge/2026/mlh-trust-badge-2026-white.svg"
+          alt="Major League Hacking 2026 Hackathon Season"
+          style={{ width: '100%' }}
+        />
+      </a>
+      
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -68,22 +95,6 @@ export default function Header() {
                 </Link>
               );
             })}
-            {/* MLH Trust Badge */}
-            <a
-              href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center"
-            >
-              <Image
-                src="/mlh-logo-color.svg"
-                alt="MLH 2025"
-                width={40}
-                height={80}
-                className="h-10 w-auto"
-                priority
-              />
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -151,5 +162,6 @@ export default function Header() {
         </AnimatePresence>
       </nav>
     </header>
+    </>
   );
 }
