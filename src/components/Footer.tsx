@@ -82,8 +82,8 @@ export default function Footer() {
                 hackokstate@okstate.edu
               </a>
             </div>
-            {/* MLH Trust Badge */}
-            <div className="pt-4">
+            {/* MLH Trust Badge & Pure Buttons Logo */}
+            <div className="pt-4 flex items-center gap-4">
               <a
                 href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2025-season&utm_content=white"
                 target="_blank"
@@ -96,6 +96,20 @@ export default function Footer() {
                   width={60}
                   height={120}
                   className="h-16 w-auto"
+                />
+              </a>
+              <a
+                href="https://mlh.link/MLH-PureButtons-hackathons"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-white p-2 rounded"
+              >
+                <Image
+                  src="/Pure-Buttons-Blue-Gradient-Logo-RGB.svg"
+                  alt="Pure Buttons"
+                  width={120}
+                  height={60}
+                  className="h-12 w-auto"
                 />
               </a>
             </div>
