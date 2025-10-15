@@ -61,16 +61,6 @@ export const teamData: TeamMember[] = [
     website: "https://jscott3234.github.io/"
   },
   {
-    name: "Savannah Hamblin",
-    role: "Organizer",
-    bio: "Placeholder.",
-    image: "/team/savannah.jpg",
-    github: "",
-    linkedin: "",
-    instagram: "",
-    website: ""
-  },
-  {
     name: "Justin Muoa",
     role: "Organizer",
     bio: "Software Developer and IT Support w/ a B.S. in Computer Science and a passion for AI/ML and sharing knowledge.",

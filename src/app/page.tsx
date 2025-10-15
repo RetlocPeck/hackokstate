@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Calendar, MapPin, Users, Trophy, Code, Rocket, Clock, Star, MessageSquare } from 'lucide-react';
+import { Calendar, MapPin, Users, Trophy, Code, Rocket, Clock, Star, MessageSquare, GraduationCap } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -61,13 +61,18 @@ export default function Home() {
     },
     {
       icon: Star,
-      title: '$2K+ Prizes',
+      title: '$1K+ Prizes',
       description: 'Amazing rewards for winners'
     },
     {
       icon: Code,
       title: 'All Skill Levels',
       description: 'Beginners to experts welcome'
+    },
+    {
+      icon: GraduationCap,
+      title: 'All University Students',
+      description: 'Open to students from any university'
     }
   ];
 
@@ -189,7 +194,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (

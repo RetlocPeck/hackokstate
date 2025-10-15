@@ -77,25 +77,25 @@ export default function InfoPage() {
     {
       title: '1st Place',
       description: 'Best overall project across all categories',
-      prize: 'TBD',
+      prize: 'ASUS Gaming Monitor',
       icon: Trophy
     },
     {
       title: '2nd Place',
       description: 'Second best overall project',
-      prize: 'TBD',
+      prize: 'Keychron K8 Keyboard',
       icon: Users
     },
     {
       title: '3rd Place',
       description: 'Third best overall project',
-      prize: 'TBD',
+      prize: 'AKG Pro Microphone',
       icon: Code
     },
     {
       title: 'Best New Team',
-      description: 'Best project from a team of first-time hackathon participants',
-      prize: 'TBD',
+      description: 'Best project from a team of freshmen and/or sophomores',
+      prize: 'Power Bank',
       icon: Heart
     },
     {
@@ -107,7 +107,7 @@ export default function InfoPage() {
     {
       title: 'Theme Winner',
       description: 'Best project that follows the hackathon theme',
-      prize: 'TBD',
+      prize: 'Tile Mate',
       icon: Rocket
     }
   ];
