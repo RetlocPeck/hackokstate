@@ -136,6 +136,7 @@ export default function SponsorsPage() {
   const currentSponsors = sponsorsData;
 
   const partnerOrganizations = [
+    'OSU CS Department',
     'OSU ECE Department',
     'OSU IEEE Chapter',
     'OSU ACM Chapter'

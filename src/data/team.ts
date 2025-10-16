@@ -53,7 +53,7 @@ export const teamData: TeamMember[] = [
   {
     name: "Jase Scott",
     role: "Organizer",
-    bio: "I find enjoyment in exploring applications for programming. I've explored a lot; everything between Graphics Programming, VR/AR, Game Design Oriented Programming, and even Fullstack. I've still got a long way to go until I carve out my own little corner of the industry, but I certainly am enjoying the journey. When I'm not programming, I'm either in the mountains or cooking!.",
+    bio: "Computer Science Undergrad, Fullstack Programmer, OSU VR/AR Researcher, ACM Community Outreach Officer, Video Game Development Club Officer.",
     image: "/team/jase.jpg",
     github: "https://github.com/JScott3234",
     linkedin: "https://www.linkedin.com/in/jase-scott-a76980309",
