@@ -12,7 +12,7 @@ export interface TeamMember {
 export const teamData: TeamMember[] = [
   {
     name: "Colter Holmes",
-    role: "Event Director",
+    role: "Executive Director",
     bio: "Computer Engineering student and Microsoft Software Engineering intern dedicated to organizing Hack OKState and inspiring collaboration in tech.",
     image: "/team/colter.jpg",
     github: "https://github.com/retlocpeck",
@@ -22,7 +22,7 @@ export const teamData: TeamMember[] = [
   },
   {
     name: "Ricardo Mulino",
-    role: "Co-Director",
+    role: "Execvutive Co-Director",
     bio: "Computer Science student, ex-Google intern, President of ACM OSU chapter dedicated to bolstering interest in coding and overall computing at Oklahoma State.",
     image: "/team/ricardo.jpg",
     github: "",
@@ -42,7 +42,7 @@ export const teamData: TeamMember[] = [
   },
   {
     name: "Katy Wagner",
-    role: "Category Lead",
+    role: "Logistics Director",
     bio: "Electrical and Computer engineering student with an interest in cybersecurity and a 1st degree black belt in Taekwondo.",
     image: "/team/katy.jpg",
     github: "",
@@ -52,7 +52,7 @@ export const teamData: TeamMember[] = [
   },
   {
     name: "Jase Scott",
-    role: "Organizer",
+    role: "Outreach Director",
     bio: "Computer Science Undergrad, Fullstack Programmer, OSU VR/AR Researcher, ACM Community Outreach Officer, Video Game Development Club Officer.",
     image: "/team/jase.jpg",
     github: "https://github.com/JScott3234",
