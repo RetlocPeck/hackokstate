@@ -22,7 +22,7 @@ export const teamData: TeamMember[] = [
   },
   {
     name: "Ricardo Mulino",
-    role: "Execvutive Co-Director",
+    role: "Executive Co-Director",
     bio: "Computer Science student, ex-Google intern, President of ACM OSU chapter dedicated to bolstering interest in coding and overall computing at Oklahoma State.",
     image: "/team/ricardo.jpg",
     github: "",
